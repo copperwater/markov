@@ -1,0 +1,3 @@
+Here is what I use to minimize text (for example, in the MarkovChar program where I don't care about punctuation).
+
+cat corpus.txt | sed 's/[^a-zA-Z ]//g' | tr '[:upper:]' '[:lower:]' > corpusMin.txt
