@@ -1,4 +1,4 @@
-#Markov chain utility for strings and characters.
+###Markov chain utility for strings and characters.
 
 This is a program that uses Markov chains to generate new strings from a corpus. 
 
