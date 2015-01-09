@@ -58,11 +58,13 @@ template <unsigned int N> class Markov {
   std::string getNext(source<N> s) {
     std::map<std::string, uint> m = markov_maps[s];
     uint tot = 0;
-    for(std::map<std::string,uint>::const_iterator itr=m.begin(); itr!=m.end(); ++itr) {
+    for(std::map<std::string,uint>::const_iterator itr=m.begin();
+	itr!=m.end(); ++itr) {
       tot += itr->second;
     }
     int rnd = rand() % tot;
-    for(std::map<std::string,uint>::const_iterator itr=m.begin(); itr!=m.end(); ++itr) {
+    for(std::map<std::string,uint>::const_iterator itr=m.begin();
+	itr!=m.end(); ++itr) {
       rnd -= itr->second;
       if(rnd < 0) {
 	return itr->first;
@@ -80,10 +82,10 @@ template <unsigned int N> class Markov {
 
  public:
   //Generate Markov associations by reading in from a corpus
-  void readFrom(std::istream& i, const std::string mode) {
+  void readFrom(std::istream& i, const bool linebyline) {
     source<N> src;
     std::string tmp;
-    if(mode == "lbl") {
+    if(linebyline) {
       std::string tmp2;
       getline(i, tmp);
       std::stringstream s(tmp);
@@ -125,7 +127,8 @@ template <unsigned int N> class Markov {
 	out.append(" "+tmp);
 	src.rotate(tmp);
       }
-    } 
+    }
+    out.erase(0,1);
     return out;
   }
 
