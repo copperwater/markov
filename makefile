@@ -15,4 +15,4 @@ char_test.o: char_test.cpp
 	g++ -c $(DFLAGS) char_test.cpp
 
 clean:
-	rm -f *.o
+	rm -f *.o test char_test
