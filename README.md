@@ -8,3 +8,5 @@ Markov.h implements the Markov class, which can be used to generate lists of str
 You can use it in "corpus" mode, which reads the entire corpus and generates associations without respecting line breaks, or in "line-by-line" mode, which generates line-independent associations.
 
 MarkovChar.h implements the MarkovChar class, which can be used to generate single strings of letters.
+
+As of March 2015, you can see this in action with the Twitter bot MarkovQuotes (http://twitter.com/markovquotes), which uses the functionality of Markov.h to mash up inspirational quotes.
