@@ -3,7 +3,7 @@ DFLAGS = -g
 all: markov-char markov-word
 
 markov-word: markov-word.o
-	g++ $(DFLAGS markov-word.o -o markov-word
+	g++ $(DFLAGS) markov-word.o -o markov-word
 
 markov-word.o: markov-word.cpp MarkovWord.h
 	g++ -c $(DFLAGS) markov-word.cpp
