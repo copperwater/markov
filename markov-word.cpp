@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "Markov.h"
+#include "MarkovWord.h"
 using namespace std;
 
 //if you want to control the accuracy of the Markov object at compile time:

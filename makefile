@@ -1,18 +1,18 @@
 DFLAGS = -g
 
-all: test char_test
+all: markov-char markov-word
 
-test: test.o
-	g++ $(DFLAGS) test.o -o test
+markov-word: markov-word.o
+	g++ $(DFLAGS markov-word.o -o markov-word
 
-test.o: test.cpp markov.h
-	g++ -c $(DFLAGS) test.cpp
+markov-word.o: markov-word.cpp MarkovWord.h
+	g++ -c $(DFLAGS) markov-word.cpp
 
-char_test: char_test.o
-	g++ $(DFLAGS) char_test.o -o char_test
+markov-char: markov-char.o
+	g++ $(DFLAGS) markov-char.o -o markov-char
 
-char_test.o: char_test.cpp
-	g++ -c $(DFLAGS) char_test.cpp
+markov-char.o: markov-char.cpp MarkovChar.h
+	g++ -c $(DFLAGS) markov-char.cpp
 
 clean:
-	rm -f *.o test char_test
+	rm -f *.o markov-word markov-char
